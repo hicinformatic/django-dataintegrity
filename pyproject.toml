@@ -46,38 +46,11 @@ dependencies = [
   "django-virtualqueryset>=0.1.0",
 ]
 
-[project.optional-dependencies]
-dev = [
-  "pytest>=7.0",
-  "pytest-django>=4.5",
-  "ruff>=0.5",
-  "mypy>=1.0",
-  "django-stubs>=5.0.0",
-  "python-dotenv>=1.0",
-]
-lint = [
-  "ruff>=0.5.0",
-  "mypy>=1.0.0",
-  "semgrep>=1.0.0",
-  "pylint>=3.0.0",
-]
-quality = [
-  "radon>=6.0.0",
-  "vulture>=2.0.0",
-  "autoflake>=2.0.0",
-]
-security = [
-  "bandit>=1.7.0",
-  "safety>=3.0.0",
-  "pip-audit>=2.7.0",
-  "semgrep>=1.0.0",
-]
-
 [project.urls]
-Homepage = "https://github.com/hicinformatic/django-dataintegrity"
-Repository = "https://github.com/hicinformatic/django-dataintegrity"
-Documentation = "https://github.com/hicinformatic/django-dataintegrity#readme"
-Issues = "https://github.com/hicinformatic/django-dataintegrity/issues"
+Homepage = "https://github.com/hicinformatic/python-dataintegrity"
+Repository = "https://github.com/hicinformatic/python-dataintegrity"
+Documentation = "https://github.com/hicinformatic/python-dataintegrity/tree/main/django-dataintegrity#readme"
+Issues = "https://github.com/hicinformatic/python-dataintegrity/issues"
 
 [tool.setuptools]
 license-files = ["LICENSE"]
@@ -91,23 +64,3 @@ exclude = ["tests*"]
 DJANGO_SETTINGS_MODULE = "tests.settings"
 testpaths = ["tests"]
 pythonpath = ["src"]
-
-[tool.mypy]
-python_version = "3.10"
-warn_return_any = true
-plugins = ["mypy_django_plugin.main"]
-
-[[tool.mypy.overrides]]
-module = "dataintegrity.*"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "providerkit.*"
-ignore_missing_imports = true
-
-[tool.django-stubs]
-django_settings_module = "tests.settings"
-
-[tool.ruff]
-line-length = 100
-target-version = "py310"
